@@ -1,4 +1,9 @@
 # --- azurerm_data_protection_backup_vault ---
+output "data_protection_backup_vaults_id" {
+  description = "Map of id values across all data_protection_backup_vaults, keyed the same as var.data_protection_backup_vaults"
+  value       = module.data_protection_backup_vaults.data_protection_backup_vaults_id
+}
+
 output "data_protection_backup_vaults_cross_region_restore_enabled" {
   description = "Map of cross_region_restore_enabled values across all data_protection_backup_vaults, keyed the same as var.data_protection_backup_vaults"
   value       = module.data_protection_backup_vaults.data_protection_backup_vaults_cross_region_restore_enabled
@@ -55,6 +60,11 @@ output "data_protection_backup_vaults_tags" {
 }
 
 # --- azurerm_data_protection_backup_instance_data_lake_storage ---
+output "data_protection_backup_instance_data_lake_storages_id" {
+  description = "Map of id values across all data_protection_backup_instance_data_lake_storages, keyed the same as var.data_protection_backup_instance_data_lake_storages"
+  value       = module.data_protection_backup_instance_data_lake_storages.data_protection_backup_instance_data_lake_storages_id
+}
+
 output "data_protection_backup_instance_data_lake_storages_backup_policy_data_lake_storage_id" {
   description = "Map of backup_policy_data_lake_storage_id values across all data_protection_backup_instance_data_lake_storages, keyed the same as var.data_protection_backup_instance_data_lake_storages"
   value       = module.data_protection_backup_instance_data_lake_storages.data_protection_backup_instance_data_lake_storages_backup_policy_data_lake_storage_id
@@ -91,6 +101,11 @@ output "data_protection_backup_instance_data_lake_storages_storage_container_nam
 }
 
 # --- azurerm_data_protection_backup_policy_data_lake_storage ---
+output "data_protection_backup_policy_data_lake_storages_id" {
+  description = "Map of id values across all data_protection_backup_policy_data_lake_storages, keyed the same as var.data_protection_backup_policy_data_lake_storages"
+  value       = module.data_protection_backup_policy_data_lake_storages.data_protection_backup_policy_data_lake_storages_id
+}
+
 output "data_protection_backup_policy_data_lake_storages_backup_schedule" {
   description = "Map of backup_schedule values across all data_protection_backup_policy_data_lake_storages, keyed the same as var.data_protection_backup_policy_data_lake_storages"
   value       = module.data_protection_backup_policy_data_lake_storages.data_protection_backup_policy_data_lake_storages_backup_schedule
@@ -122,6 +137,11 @@ output "data_protection_backup_policy_data_lake_storages_time_zone" {
 }
 
 # --- azurerm_data_protection_backup_vault_customer_managed_key ---
+output "data_protection_backup_vault_customer_managed_keys_id" {
+  description = "Map of id values across all data_protection_backup_vault_customer_managed_keys, keyed the same as var.data_protection_backup_vault_customer_managed_keys"
+  value       = module.data_protection_backup_vault_customer_managed_keys.data_protection_backup_vault_customer_managed_keys_id
+}
+
 output "data_protection_backup_vault_customer_managed_keys_data_protection_backup_vault_id" {
   description = "Map of data_protection_backup_vault_id values across all data_protection_backup_vault_customer_managed_keys, keyed the same as var.data_protection_backup_vault_customer_managed_keys"
   value       = module.data_protection_backup_vault_customer_managed_keys.data_protection_backup_vault_customer_managed_keys_data_protection_backup_vault_id
