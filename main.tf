@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.data_protection_backup_vaults : {
       for k2, v2 in coalesce(v1.data_protection_backup_instance_data_lake_storages, {}) :
       "${k1}/${k2}" => merge(v2, {
-        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults["${k1}"].id
+        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.data_protection_backup_vaults : {
       for k2, v2 in coalesce(v1.data_protection_backup_policy_data_lake_storages, {}) :
       "${k1}/${k2}" => merge(v2, {
-        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults["${k1}"].id
+        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.data_protection_backup_vaults : {
       for k2, v2 in coalesce(v1.data_protection_backup_vault_customer_managed_keys, {}) :
       "${k1}/${k2}" => merge(v2, {
-        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults["${k1}"].id
+        data_protection_backup_vault_id = module.data_protection_backup_vaults.data_protection_backup_vaults_id["${k1}"]
       })
     }
   ]...)
