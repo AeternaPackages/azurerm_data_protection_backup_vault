@@ -61,7 +61,7 @@ EOT
       default_retention_duration = string
       name                       = string
       time_zone                  = optional(string)
-      retention_rule = optional(object({
+      retention_rule = optional(list(object({
         absolute_criteria      = optional(string)
         days_of_week           = optional(set(string))
         duration               = string
@@ -69,7 +69,7 @@ EOT
         name                   = string
         scheduled_backup_times = optional(set(string))
         weeks_of_month         = optional(set(string))
-      }))
+      })))
     })))
     data_protection_backup_vault_customer_managed_keys = optional(map(object({
       key_vault_key_id = string
