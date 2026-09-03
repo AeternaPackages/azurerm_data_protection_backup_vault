@@ -30,24 +30,24 @@ locals {
 }
 
 module "data_protection_backup_vaults" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_vault.git?ref=v5.0.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_vault.git?ref=v5.0.1"
   data_protection_backup_vaults = local.data_protection_backup_vaults
 }
 
 module "data_protection_backup_instance_data_lake_storages" {
-  source                                             = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_instance_data_lake_storage.git?ref=v5.0.0"
+  source                                             = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_instance_data_lake_storage.git?ref=v5.0.1"
   data_protection_backup_instance_data_lake_storages = local.data_protection_backup_instance_data_lake_storages
   depends_on                                         = [module.data_protection_backup_vaults]
 }
 
 module "data_protection_backup_policy_data_lake_storages" {
-  source                                           = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_policy_data_lake_storage.git?ref=v5.0.0"
+  source                                           = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_policy_data_lake_storage.git?ref=v5.0.1"
   data_protection_backup_policy_data_lake_storages = local.data_protection_backup_policy_data_lake_storages
   depends_on                                       = [module.data_protection_backup_vaults]
 }
 
 module "data_protection_backup_vault_customer_managed_keys" {
-  source                                             = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_vault_customer_managed_key.git?ref=v5.0.0"
+  source                                             = "git::https://github.com/AeternaModules/azurerm_data_protection_backup_vault_customer_managed_key.git?ref=v5.0.1"
   data_protection_backup_vault_customer_managed_keys = local.data_protection_backup_vault_customer_managed_keys
   depends_on                                         = [module.data_protection_backup_vaults]
 }
